@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq;
 
 using AnitomySharp;
@@ -12,20 +13,25 @@ namespace Jellyfin.Plugin.AniList.Anitomy
             var elements = AnitomySharp.AnitomySharp.Parse(input);
             return elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementAnimeTitle).Value;
         }
+
         public static string ExtractEpisodeTitle(string path)
         {
             var elements = AnitomySharp.AnitomySharp.Parse(path);
             return elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementEpisodeTitle).Value;
         }
-        public static string ExtractEpisodeNumber(string path)
+
+        public static int? ExtractEpisodeNumber(string path)
         {
             var elements = AnitomySharp.AnitomySharp.Parse(path);
-            return elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementEpisodeNumber).Value;
+            var value = elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementEpisodeNumber)?.Value;
+            return value != null ? int.Parse(value, CultureInfo.InvariantCulture) : null;
         }
-        public static string ExtractSeasonNumber(string path)
+
+        public static int? ExtractSeasonNumber(string path)
         {
             var elements = AnitomySharp.AnitomySharp.Parse(path);
-            return elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementAnimeSeason).Value;
+            var value = elements.FirstOrDefault(p => p.Category == Element.ElementCategory.ElementAnimeSeason)?.Value;
+            return value != null ? int.Parse(value, CultureInfo.InvariantCulture) : null;
         }
     }
 }

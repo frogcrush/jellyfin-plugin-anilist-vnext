@@ -12,7 +12,7 @@ namespace Jellyfin.Plugin.AniList.Providers.AniList
             => item is Series || item is Movie;
 
         public string ProviderName
-            => "AniList";
+            => ProviderNames.AniList;
 
         public string Key
             => ProviderNames.AniList;

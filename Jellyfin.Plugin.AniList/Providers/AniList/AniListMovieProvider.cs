@@ -17,7 +17,7 @@ namespace Jellyfin.Plugin.AniList.Providers.AniList
         private readonly ILogger _log;
         private readonly AniListApi _aniListApi;
         public int Order => -2;
-        public string Name => "AniList";
+        public string Name => ProviderNames.AniList;
 
         public AniListMovieProvider(ILogger<AniListMovieProvider> logger)
         {

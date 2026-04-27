@@ -11,7 +11,7 @@ namespace Jellyfin.Plugin.AniList.Providers.AniList
             => item is Person;
 
         public string ProviderName
-            => "AniList";
+            => ProviderNames.AniList;
 
         public string Key
             => ProviderNames.AniList;

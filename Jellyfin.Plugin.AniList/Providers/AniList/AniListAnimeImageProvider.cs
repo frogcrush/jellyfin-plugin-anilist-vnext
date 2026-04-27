@@ -19,7 +19,7 @@ namespace Jellyfin.Plugin.AniList.Providers.AniList
             _aniListApi = new AniListApi();
         }
 
-        public string Name => "AniList";
+        public string Name => ProviderNames.AniList;
 
         public bool Supports(BaseItem item) => item is Series || item is Season || item is Movie;
 

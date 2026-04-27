@@ -12,7 +12,7 @@ namespace Jellyfin.Plugin.AniList.Providers.AniList;
 /// </summary>
 public class AniListExternalUrlProvider : IExternalUrlProvider
 {
-    public string Name => "AniList";
+    public string Name => ProviderNames.AniList;
 
     public IEnumerable<string> GetExternalUrls(BaseItem item)
     {

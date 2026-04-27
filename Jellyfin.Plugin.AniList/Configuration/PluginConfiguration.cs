@@ -54,7 +54,7 @@ namespace Jellyfin.Plugin.AniList.Configuration
             AniDbRateLimit = 2000;
             AniDbReplaceGraves = true;
             AniListShowSpoilerTags = true;
-            UseAnitomyLibrary = false;
+            UseAnitomyLibrary = true;
         }
 
         public TitlePreferenceType TitlePreference { get; set; }
